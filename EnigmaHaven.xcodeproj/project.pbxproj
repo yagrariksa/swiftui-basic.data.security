@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4093620C2AAF4A9C00E06A58 /* EnigmaHavenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093620B2AAF4A9C00E06A58 /* EnigmaHavenApp.swift */; };
+		4093620E2AAF4A9C00E06A58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093620D2AAF4A9C00E06A58 /* ContentView.swift */; };
+		409362102AAF4A9D00E06A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4093620F2AAF4A9D00E06A58 /* Assets.xcassets */; };
+		409362132AAF4A9D00E06A58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409362122AAF4A9D00E06A58 /* Preview Assets.xcassets */; };
+		409362152AAF4A9D00E06A58 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409362142AAF4A9D00E06A58 /* Persistence.swift */; };
+		409362182AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 409362162AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld */; };
+		409362222AAF4A9D00E06A58 /* EnigmaHavenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409362212AAF4A9D00E06A58 /* EnigmaHavenTests.swift */; };
+		4093622C2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */; };
+		4093622E2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4093621E2AAF4A9D00E06A58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 409362002AAF4A9C00E06A58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 409362072AAF4A9C00E06A58;
+			remoteInfo = EnigmaHaven;
+		};
+		409362282AAF4A9D00E06A58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 409362002AAF4A9C00E06A58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 409362072AAF4A9C00E06A58;
+			remoteInfo = EnigmaHaven;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		409362082AAF4A9C00E06A58 /* EnigmaHaven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaHaven.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4093620B2AAF4A9C00E06A58 /* EnigmaHavenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenApp.swift; sourceTree = "<group>"; };
+		4093620D2AAF4A9C00E06A58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4093620F2AAF4A9D00E06A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		409362122AAF4A9D00E06A58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		409362142AAF4A9D00E06A58 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		409362172AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EnigmaHaven.xcdatamodel; sourceTree = "<group>"; };
+		4093621D2AAF4A9D00E06A58 /* EnigmaHavenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnigmaHavenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		409362212AAF4A9D00E06A58 /* EnigmaHavenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenTests.swift; sourceTree = "<group>"; };
+		409362272AAF4A9D00E06A58 /* EnigmaHavenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnigmaHavenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenUITests.swift; sourceTree = "<group>"; };
+		4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		409362052AAF4A9C00E06A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4093621A2AAF4A9D00E06A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		409362242AAF4A9D00E06A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		409361FF2AAF4A9C00E06A58 = {
+			isa = PBXGroup;
+			children = (
+				4093620A2AAF4A9C00E06A58 /* EnigmaHaven */,
+				409362202AAF4A9D00E06A58 /* EnigmaHavenTests */,
+				4093622A2AAF4A9D00E06A58 /* EnigmaHavenUITests */,
+				409362092AAF4A9C00E06A58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		409362092AAF4A9C00E06A58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				409362082AAF4A9C00E06A58 /* EnigmaHaven.app */,
+				4093621D2AAF4A9D00E06A58 /* EnigmaHavenTests.xctest */,
+				409362272AAF4A9D00E06A58 /* EnigmaHavenUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4093620A2AAF4A9C00E06A58 /* EnigmaHaven */ = {
+			isa = PBXGroup;
+			children = (
+				4093620B2AAF4A9C00E06A58 /* EnigmaHavenApp.swift */,
+				4093620D2AAF4A9C00E06A58 /* ContentView.swift */,
+				4093620F2AAF4A9D00E06A58 /* Assets.xcassets */,
+				409362142AAF4A9D00E06A58 /* Persistence.swift */,
+				409362162AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld */,
+				409362112AAF4A9D00E06A58 /* Preview Content */,
+			);
+			path = EnigmaHaven;
+			sourceTree = "<group>";
+		};
+		409362112AAF4A9D00E06A58 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				409362122AAF4A9D00E06A58 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		409362202AAF4A9D00E06A58 /* EnigmaHavenTests */ = {
+			isa = PBXGroup;
+			children = (
+				409362212AAF4A9D00E06A58 /* EnigmaHavenTests.swift */,
+			);
+			path = EnigmaHavenTests;
+			sourceTree = "<group>";
+		};
+		4093622A2AAF4A9D00E06A58 /* EnigmaHavenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */,
+				4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */,
+			);
+			path = EnigmaHavenUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		409362072AAF4A9C00E06A58 /* EnigmaHaven */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 409362312AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHaven" */;
+			buildPhases = (
+				409362042AAF4A9C00E06A58 /* Sources */,
+				409362052AAF4A9C00E06A58 /* Frameworks */,
+				409362062AAF4A9C00E06A58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnigmaHaven;
+			productName = EnigmaHaven;
+			productReference = 409362082AAF4A9C00E06A58 /* EnigmaHaven.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4093621C2AAF4A9D00E06A58 /* EnigmaHavenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 409362342AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHavenTests" */;
+			buildPhases = (
+				409362192AAF4A9D00E06A58 /* Sources */,
+				4093621A2AAF4A9D00E06A58 /* Frameworks */,
+				4093621B2AAF4A9D00E06A58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4093621F2AAF4A9D00E06A58 /* PBXTargetDependency */,
+			);
+			name = EnigmaHavenTests;
+			productName = EnigmaHavenTests;
+			productReference = 4093621D2AAF4A9D00E06A58 /* EnigmaHavenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		409362262AAF4A9D00E06A58 /* EnigmaHavenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 409362372AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHavenUITests" */;
+			buildPhases = (
+				409362232AAF4A9D00E06A58 /* Sources */,
+				409362242AAF4A9D00E06A58 /* Frameworks */,
+				409362252AAF4A9D00E06A58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				409362292AAF4A9D00E06A58 /* PBXTargetDependency */,
+			);
+			name = EnigmaHavenUITests;
+			productName = EnigmaHavenUITests;
+			productReference = 409362272AAF4A9D00E06A58 /* EnigmaHavenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		409362002AAF4A9C00E06A58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					409362072AAF4A9C00E06A58 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					4093621C2AAF4A9D00E06A58 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 409362072AAF4A9C00E06A58;
+					};
+					409362262AAF4A9D00E06A58 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 409362072AAF4A9C00E06A58;
+					};
+				};
+			};
+			buildConfigurationList = 409362032AAF4A9C00E06A58 /* Build configuration list for PBXProject "EnigmaHaven" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 409361FF2AAF4A9C00E06A58;
+			productRefGroup = 409362092AAF4A9C00E06A58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				409362072AAF4A9C00E06A58 /* EnigmaHaven */,
+				4093621C2AAF4A9D00E06A58 /* EnigmaHavenTests */,
+				409362262AAF4A9D00E06A58 /* EnigmaHavenUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		409362062AAF4A9C00E06A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409362132AAF4A9D00E06A58 /* Preview Assets.xcassets in Resources */,
+				409362102AAF4A9D00E06A58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4093621B2AAF4A9D00E06A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		409362252AAF4A9D00E06A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		409362042AAF4A9C00E06A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409362152AAF4A9D00E06A58 /* Persistence.swift in Sources */,
+				4093620E2AAF4A9C00E06A58 /* ContentView.swift in Sources */,
+				4093620C2AAF4A9C00E06A58 /* EnigmaHavenApp.swift in Sources */,
+				409362182AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		409362192AAF4A9D00E06A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409362222AAF4A9D00E06A58 /* EnigmaHavenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		409362232AAF4A9D00E06A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4093622E2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift in Sources */,
+				4093622C2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4093621F2AAF4A9D00E06A58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 409362072AAF4A9C00E06A58 /* EnigmaHaven */;
+			targetProxy = 4093621E2AAF4A9D00E06A58 /* PBXContainerItemProxy */;
+		};
+		409362292AAF4A9D00E06A58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 409362072AAF4A9C00E06A58 /* EnigmaHaven */;
+			targetProxy = 409362282AAF4A9D00E06A58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4093622F2AAF4A9D00E06A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		409362302AAF4A9D00E06A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		409362322AAF4A9D00E06A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnigmaHaven/Preview Content\"";
+				DEVELOPMENT_TEAM = AR84MSRR4K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yagrariksa.altechomega.test.EnigmaHaven;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		409362332AAF4A9D00E06A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnigmaHaven/Preview Content\"";
+				DEVELOPMENT_TEAM = AR84MSRR4K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yagrariksa.altechomega.test.EnigmaHaven;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		409362352AAF4A9D00E06A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AR84MSRR4K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yagrariksa.altechomega.test.EnigmaHavenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnigmaHaven.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EnigmaHaven";
+			};
+			name = Debug;
+		};
+		409362362AAF4A9D00E06A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AR84MSRR4K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yagrariksa.altechomega.test.EnigmaHavenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnigmaHaven.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EnigmaHaven";
+			};
+			name = Release;
+		};
+		409362382AAF4A9D00E06A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AR84MSRR4K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yagrariksa.altechomega.test.EnigmaHavenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EnigmaHaven;
+			};
+			name = Debug;
+		};
+		409362392AAF4A9D00E06A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AR84MSRR4K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yagrariksa.altechomega.test.EnigmaHavenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EnigmaHaven;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		409362032AAF4A9C00E06A58 /* Build configuration list for PBXProject "EnigmaHaven" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4093622F2AAF4A9D00E06A58 /* Debug */,
+				409362302AAF4A9D00E06A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		409362312AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHaven" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				409362322AAF4A9D00E06A58 /* Debug */,
+				409362332AAF4A9D00E06A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		409362342AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHavenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				409362352AAF4A9D00E06A58 /* Debug */,
+				409362362AAF4A9D00E06A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		409362372AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHavenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				409362382AAF4A9D00E06A58 /* Debug */,
+				409362392AAF4A9D00E06A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		409362162AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				409362172AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodel */,
+			);
+			currentVersion = 409362172AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodel */;
+			path = EnigmaHaven.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 409362002AAF4A9C00E06A58 /* Project object */;
+}
