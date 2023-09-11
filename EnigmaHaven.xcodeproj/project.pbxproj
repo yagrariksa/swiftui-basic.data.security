@@ -17,6 +17,11 @@
 		4093622C2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */; };
 		4093622E2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */; };
 		4093623D2AAF4C5600E06A58 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093623B2AAF4C5600E06A58 /* Item+CoreDataClass.swift */; };
+		409362402AAF6EF200E06A58 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093623F2AAF6EF200E06A58 /* AuthView.swift */; };
+		409362432AAF75E400E06A58 /* KeyObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409362422AAF75E400E06A58 /* KeyObservable.swift */; };
+		A9697C80004D2F55710EABF3 /* Pods_EnigmaHavenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F431CDC2C5E2A387C3FA33 /* Pods_EnigmaHavenTests.framework */; };
+		E4F4369C7946F10FBE89FC21 /* Pods_EnigmaHaven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC7F6A3D9B31641AF620411 /* Pods_EnigmaHaven.framework */; };
+		F76EEF0DCA16386B039FE576 /* Pods_EnigmaHaven_EnigmaHavenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E010812C8BA7D73E2C0373F /* Pods_EnigmaHaven_EnigmaHavenUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AC7F6A3D9B31641AF620411 /* Pods_EnigmaHaven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnigmaHaven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E010812C8BA7D73E2C0373F /* Pods_EnigmaHaven_EnigmaHavenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnigmaHaven_EnigmaHavenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D2A34FD14152AF7FF45C561 /* Pods-EnigmaHaven-EnigmaHavenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnigmaHaven-EnigmaHavenUITests.release.xcconfig"; path = "Target Support Files/Pods-EnigmaHaven-EnigmaHavenUITests/Pods-EnigmaHaven-EnigmaHavenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		409362082AAF4A9C00E06A58 /* EnigmaHaven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaHaven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4093620B2AAF4A9C00E06A58 /* EnigmaHavenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenApp.swift; sourceTree = "<group>"; };
 		4093620D2AAF4A9C00E06A58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +58,15 @@
 		4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenUITests.swift; sourceTree = "<group>"; };
 		4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4093623B2AAF4C5600E06A58 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4093623F2AAF6EF200E06A58 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		409362412AAF6F6800E06A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		409362422AAF75E400E06A58 /* KeyObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyObservable.swift; sourceTree = "<group>"; };
+		43F431CDC2C5E2A387C3FA33 /* Pods_EnigmaHavenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnigmaHavenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BE9890EEC3F2DD01CD50D93 /* Pods-EnigmaHaven.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnigmaHaven.release.xcconfig"; path = "Target Support Files/Pods-EnigmaHaven/Pods-EnigmaHaven.release.xcconfig"; sourceTree = "<group>"; };
+		93F6D634F11A8C379D374BC4 /* Pods-EnigmaHavenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnigmaHavenTests.debug.xcconfig"; path = "Target Support Files/Pods-EnigmaHavenTests/Pods-EnigmaHavenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1410C875B3B153E5083B269 /* Pods-EnigmaHavenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnigmaHavenTests.release.xcconfig"; path = "Target Support Files/Pods-EnigmaHavenTests/Pods-EnigmaHavenTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3DF09457FDCB2E5D5C12C87 /* Pods-EnigmaHaven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnigmaHaven.debug.xcconfig"; path = "Target Support Files/Pods-EnigmaHaven/Pods-EnigmaHaven.debug.xcconfig"; sourceTree = "<group>"; };
+		DE5EB20B9F001EC9197FC99E /* Pods-EnigmaHaven-EnigmaHavenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnigmaHaven-EnigmaHavenUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnigmaHaven-EnigmaHavenUITests/Pods-EnigmaHaven-EnigmaHavenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F4369C7946F10FBE89FC21 /* Pods_EnigmaHaven.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9697C80004D2F55710EABF3 /* Pods_EnigmaHavenTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76EEF0DCA16386B039FE576 /* Pods_EnigmaHaven_EnigmaHavenUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +104,8 @@
 				409362202AAF4A9D00E06A58 /* EnigmaHavenTests */,
 				4093622A2AAF4A9D00E06A58 /* EnigmaHavenUITests */,
 				409362092AAF4A9C00E06A58 /* Products */,
+				E116D9CEFB01CD54A3C76931 /* Pods */,
+				601B8189330A489F2715FFC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +122,7 @@
 		4093620A2AAF4A9C00E06A58 /* EnigmaHaven */ = {
 			isa = PBXGroup;
 			children = (
+				409362412AAF6F6800E06A58 /* Info.plist */,
 				4093623A2AAF4C4100E06A58 /* Model */,
 				4093620B2AAF4A9C00E06A58 /* EnigmaHavenApp.swift */,
 				4093620D2AAF4A9C00E06A58 /* ContentView.swift */,
@@ -107,6 +130,8 @@
 				409362142AAF4A9D00E06A58 /* Persistence.swift */,
 				409362162AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld */,
 				409362112AAF4A9D00E06A58 /* Preview Content */,
+				4093623F2AAF6EF200E06A58 /* AuthView.swift */,
+				409362422AAF75E400E06A58 /* KeyObservable.swift */,
 			);
 			path = EnigmaHaven;
 			sourceTree = "<group>";
@@ -144,6 +169,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		601B8189330A489F2715FFC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AC7F6A3D9B31641AF620411 /* Pods_EnigmaHaven.framework */,
+				0E010812C8BA7D73E2C0373F /* Pods_EnigmaHaven_EnigmaHavenUITests.framework */,
+				43F431CDC2C5E2A387C3FA33 /* Pods_EnigmaHavenTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E116D9CEFB01CD54A3C76931 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3DF09457FDCB2E5D5C12C87 /* Pods-EnigmaHaven.debug.xcconfig */,
+				8BE9890EEC3F2DD01CD50D93 /* Pods-EnigmaHaven.release.xcconfig */,
+				DE5EB20B9F001EC9197FC99E /* Pods-EnigmaHaven-EnigmaHavenUITests.debug.xcconfig */,
+				2D2A34FD14152AF7FF45C561 /* Pods-EnigmaHaven-EnigmaHavenUITests.release.xcconfig */,
+				93F6D634F11A8C379D374BC4 /* Pods-EnigmaHavenTests.debug.xcconfig */,
+				A1410C875B3B153E5083B269 /* Pods-EnigmaHavenTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 409362312AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHaven" */;
 			buildPhases = (
+				D4C89CE870DF65B76FD47AF4 /* [CP] Check Pods Manifest.lock */,
 				409362042AAF4A9C00E06A58 /* Sources */,
 				409362052AAF4A9C00E06A58 /* Frameworks */,
 				409362062AAF4A9C00E06A58 /* Resources */,
+				9C1BCF409477AF5F0D390761 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 409362342AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHavenTests" */;
 			buildPhases = (
+				41DEE492AFA9D4D2F8B35121 /* [CP] Check Pods Manifest.lock */,
 				409362192AAF4A9D00E06A58 /* Sources */,
 				4093621A2AAF4A9D00E06A58 /* Frameworks */,
 				4093621B2AAF4A9D00E06A58 /* Resources */,
@@ -186,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 409362372AAF4A9D00E06A58 /* Build configuration list for PBXNativeTarget "EnigmaHavenUITests" */;
 			buildPhases = (
+				0592B2AE3F4DF294D7208D4E /* [CP] Check Pods Manifest.lock */,
 				409362232AAF4A9D00E06A58 /* Sources */,
 				409362242AAF4A9D00E06A58 /* Frameworks */,
 				409362252AAF4A9D00E06A58 /* Resources */,
+				B4516B37FF5F614B534D7862 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +322,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0592B2AE3F4DF294D7208D4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnigmaHaven-EnigmaHavenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41DEE492AFA9D4D2F8B35121 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnigmaHavenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C1BCF409477AF5F0D390761 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnigmaHaven/Pods-EnigmaHaven-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnigmaHaven/Pods-EnigmaHaven-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnigmaHaven/Pods-EnigmaHaven-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4516B37FF5F614B534D7862 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnigmaHaven-EnigmaHavenUITests/Pods-EnigmaHaven-EnigmaHavenUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnigmaHaven-EnigmaHavenUITests/Pods-EnigmaHaven-EnigmaHavenUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnigmaHaven-EnigmaHavenUITests/Pods-EnigmaHaven-EnigmaHavenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C89CE870DF65B76FD47AF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnigmaHaven-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		409362042AAF4A9C00E06A58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +432,8 @@
 			files = (
 				4093623D2AAF4C5600E06A58 /* Item+CoreDataClass.swift in Sources */,
 				409362152AAF4A9D00E06A58 /* Persistence.swift in Sources */,
+				409362432AAF75E400E06A58 /* KeyObservable.swift in Sources */,
+				409362402AAF6EF200E06A58 /* AuthView.swift in Sources */,
 				4093620E2AAF4A9C00E06A58 /* ContentView.swift in Sources */,
 				4093620C2AAF4A9C00E06A58 /* EnigmaHavenApp.swift in Sources */,
 				409362182AAF4A9D00E06A58 /* EnigmaHaven.xcdatamodeld in Sources */,
@@ -431,6 +589,7 @@
 		};
 		409362322AAF4A9D00E06A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3DF09457FDCB2E5D5C12C87 /* Pods-EnigmaHaven.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +599,8 @@
 				DEVELOPMENT_TEAM = AR84MSRR4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnigmaHaven/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID to Secure Data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -460,6 +621,7 @@
 		};
 		409362332AAF4A9D00E06A58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BE9890EEC3F2DD01CD50D93 /* Pods-EnigmaHaven.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +631,8 @@
 				DEVELOPMENT_TEAM = AR84MSRR4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnigmaHaven/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID to Secure Data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +653,7 @@
 		};
 		409362352AAF4A9D00E06A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93F6D634F11A8C379D374BC4 /* Pods-EnigmaHavenTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +674,7 @@
 		};
 		409362362AAF4A9D00E06A58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1410C875B3B153E5083B269 /* Pods-EnigmaHavenTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,6 +695,7 @@
 		};
 		409362382AAF4A9D00E06A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE5EB20B9F001EC9197FC99E /* Pods-EnigmaHaven-EnigmaHavenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +714,7 @@
 		};
 		409362392AAF4A9D00E06A58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D2A34FD14152AF7FF45C561 /* Pods-EnigmaHaven-EnigmaHavenUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

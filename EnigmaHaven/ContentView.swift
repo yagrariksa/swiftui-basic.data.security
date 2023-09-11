@@ -10,7 +10,9 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
+    @EnvironmentObject private var keyObservable: KeyObservable
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
         animation: .default)
@@ -18,15 +20,20 @@ struct ContentView: View {
     
     @State private var showSheetAddItem: Bool = false
     @State private var editedItem: Item? = nil
-
+    
     var body: some View {
-        NavigationView {
+        if !keyObservable.isAuthenticate {
+            AuthView()
+        } else {
             List {
                 ForEach(items) { item in
                     ItemRow(item: item, onClick: editItem)
                 }
                 .onDelete(perform: deleteItems)
                 
+            }
+            .onAppear {
+                print("KEY: \(String(describing: keyObservable.key))")
             }
             .navigationTitle("Secret Data")
             .listStyle(.grouped)
@@ -50,7 +57,7 @@ struct ContentView: View {
             }
         }
     }
-   
+    
     private func toggleSheetAddItem() {
         showSheetAddItem.toggle()
     }
@@ -59,11 +66,11 @@ struct ContentView: View {
     private func editItem(_ item: Item) {
         editedItem = item
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
                 print("🟢SUCCESS: delete Item")
@@ -134,6 +141,7 @@ struct AddItemSheet: View {
     }
     
     var body: some View {
+        
         NavigationView {
             VStack {
                 List {
@@ -172,6 +180,7 @@ struct AddItemSheet: View {
                 }
             }
         }
+        
     }
     
     private func clearInput() {
@@ -186,7 +195,6 @@ struct AddItemSheet: View {
     }
     
     private func onAppear() {
-        
         guard let item = editedItem,
               let title = item.title
         else { return }
