@@ -88,6 +88,8 @@ struct AuthView: View {
             KeychainWrapper.standard.string(forKey: "enigma_passcode") == nil {
             KeychainWrapper.standard.set(true, forKey: "firstLaunch")
             showAlertSetPasscode.toggle()
+        }else {
+            authenticateWithBiometric()
         }
     }
     

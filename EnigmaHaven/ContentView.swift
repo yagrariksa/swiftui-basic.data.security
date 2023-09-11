@@ -30,10 +30,9 @@ struct ContentView: View {
                     ItemRow(item: item, onClick: editItem)
                 }
                 .onDelete(perform: deleteItems)
-                
             }
             .onAppear {
-                print("KEY: \(String(describing: keyObservable.key))")
+                // check anything!
             }
             .navigationTitle("Secret Data")
             .listStyle(.grouped)
@@ -127,6 +126,8 @@ struct ItemRow: View {
 
 struct AddItemSheet: View {
     
+    @EnvironmentObject private var keyObservable: KeyObservable
+    
     var dismiss: () -> Void
     @Binding var editedItem: Item?
     
@@ -136,9 +137,30 @@ struct AddItemSheet: View {
     @State private var data: String = ""
     @State private var hide: Bool = false
     
+    @State private var cipherText = ""
+    @State private var nonce: Data? = nil
+    @State private var tag: Data? = nil
+    
     private var navTitle: String {
         editedItem == nil ? "Add Item" : "Edit Item"
     }
+    
+    private var decrypt: String {
+        do {
+            guard let key = keyObservable.key,
+                  let tag = tag
+            else { return "noKey" }
+            if let nonce = self.nonce {
+                
+                return try Item.decrypt(ciphertext: cipherText, key: key, nonce: nonce, tag: tag)
+            }else {
+                return "no Nonce"
+            }
+        } catch {
+            return "error \(String(describing: error))"
+        }
+    }
+
     
     var body: some View {
         
@@ -158,9 +180,28 @@ struct AddItemSheet: View {
                     Section("Data") {
                         TextEditor(text: $data)
                     }
+                    
+                    Section("ENCRYPT-result") {
+                        Text(cipherText)
+                    }
+                    
+                    if nonce != nil && cipherText != "" {
+                        Section("DECRYPT-test-result") {
+                            Text(decrypt)
+                        }
+                    }
                 }
                 .listStyle(.insetGrouped)
             }
+            .onChange(of: data, perform: { _ in
+                guard data != "", let key = keyObservable.key else { return }
+                do {
+                    let enc = try Item.encrypt(plaintext: data, key: key)
+                    self.cipherText =  enc.ciphertext
+                    self.nonce = enc.nonce
+                    self.tag = enc.tag
+                } catch { }
+            })
             .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.large)
             .onAppear(perform: onAppear)
