@@ -16,6 +16,7 @@
 		409362222AAF4A9D00E06A58 /* EnigmaHavenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409362212AAF4A9D00E06A58 /* EnigmaHavenTests.swift */; };
 		4093622C2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */; };
 		4093622E2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */; };
+		4093623D2AAF4C5600E06A58 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093623B2AAF4C5600E06A58 /* Item+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		409362272AAF4A9D00E06A58 /* EnigmaHavenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnigmaHavenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4093622B2AAF4A9D00E06A58 /* EnigmaHavenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenUITests.swift; sourceTree = "<group>"; };
 		4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHavenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4093623B2AAF4C5600E06A58 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		4093620A2AAF4A9C00E06A58 /* EnigmaHaven */ = {
 			isa = PBXGroup;
 			children = (
+				4093623A2AAF4C4100E06A58 /* Model */,
 				4093620B2AAF4A9C00E06A58 /* EnigmaHavenApp.swift */,
 				4093620D2AAF4A9C00E06A58 /* ContentView.swift */,
 				4093620F2AAF4A9D00E06A58 /* Assets.xcassets */,
@@ -131,6 +134,14 @@
 				4093622D2AAF4A9D00E06A58 /* EnigmaHavenUITestsLaunchTests.swift */,
 			);
 			path = EnigmaHavenUITests;
+			sourceTree = "<group>";
+		};
+		4093623A2AAF4C4100E06A58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4093623B2AAF4C5600E06A58 /* Item+CoreDataClass.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4093623D2AAF4C5600E06A58 /* Item+CoreDataClass.swift in Sources */,
 				409362152AAF4A9D00E06A58 /* Persistence.swift in Sources */,
 				4093620E2AAF4A9C00E06A58 /* ContentView.swift in Sources */,
 				4093620C2AAF4A9C00E06A58 /* EnigmaHavenApp.swift in Sources */,

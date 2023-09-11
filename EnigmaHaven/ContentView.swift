@@ -12,50 +12,52 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State private var showSheetAddItem: Bool = false
+    @State private var editedItem: Item? = nil
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+                    ItemRow(item: item, onClick: editItem)
                 }
                 .onDelete(perform: deleteItems)
+                
             }
+            .navigationTitle("Secret Data")
+            .listStyle(.grouped)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: toggleSheetAddItem) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
             }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            .sheet(isPresented: $showSheetAddItem) {
+                AddItemSheet(dismiss: toggleSheetAddItem, editedItem: $editedItem)
+            }
+            .onChange(of: editedItem) { _ in
+                if editedItem != nil {
+                    toggleSheetAddItem()
+                }
             }
         }
+    }
+   
+    private func toggleSheetAddItem() {
+        showSheetAddItem.toggle()
+    }
+    
+    
+    private func editItem(_ item: Item) {
+        editedItem = item
     }
 
     private func deleteItems(offsets: IndexSet) {
@@ -64,13 +66,160 @@ struct ContentView: View {
 
             do {
                 try viewContext.save()
+                print("🟢SUCCESS: delete Item")
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                print("🔴ERROR: delete Item: \(String(describing: error))")
             }
         }
+    }
+}
+
+struct ItemRow: View {
+    var item: Item
+    var onClick: (_ item: Item) -> Void
+    
+    var body: some View {
+        Section {
+            Button {
+                onClick(item)
+            } label: {
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(item.title!)
+                            .font(.headline)
+                        Spacer()
+                        Text(item.timestamp!, formatter: itemFormatter)
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    if item.hide && item.data != "" {
+                        HStack(alignment: .bottom) {
+                            Text("*******\n*****")
+                                .multilineTextAlignment(.leading)
+                                .padding(.vertical,1)
+                            Spacer()
+                            Text("Data hidden\nbecause it's secret")
+                                .multilineTextAlignment(.trailing)
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                    } else if let data = item.data, data != "" {
+                        Text(data)
+                            .multilineTextAlignment(.leading)
+                            .padding(.vertical,1)
+                    }
+                }
+                .foregroundColor(Color(uiColor: .label))
+                .clipShape(Rectangle())
+            }
+            .buttonStyle(.borderless)
+        }
+    }
+}
+
+struct AddItemSheet: View {
+    
+    var dismiss: () -> Void
+    @Binding var editedItem: Item?
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @State private var title: String = ""
+    @State private var data: String = ""
+    @State private var hide: Bool = false
+    
+    private var navTitle: String {
+        editedItem == nil ? "Add Item" : "Edit Item"
+    }
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                List {
+                    Section("Title") {
+                        TextField("Personal Data", text: $title)
+                    }
+                    
+                    Section("Hide Data") {
+                        Toggle(isOn: $hide) {
+                            Text("cover data when in list view")
+                        }
+                    }
+                    
+                    Section("Data") {
+                        TextEditor(text: $data)
+                    }
+                }
+                .listStyle(.insetGrouped)
+            }
+            .navigationTitle(navTitle)
+            .navigationBarTitleDisplayMode(.large)
+            .onAppear(perform: onAppear)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: saveItem) {
+                        Text("Save")
+                    }
+                    .disabled(title == "")
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: _dismiss) {
+                        Text("Cancel")
+                            .foregroundColor(.red)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func clearInput() {
+        title = ""
+        data = ""
+        editedItem = nil
+    }
+    
+    private func _dismiss() {
+        clearInput()
+        dismiss()
+    }
+    
+    private func onAppear() {
+        
+        guard let item = editedItem,
+              let title = item.title
+        else { return }
+        print("🔵item found: \(title)")
+        
+        self.title = title
+        self.data = item.data ?? ""
+        self.hide = item.hide
+    }
+    
+    private func saveItem() {
+        guard title != "" else { return }
+        
+        do {
+            if editedItem == nil {
+                try Item.create(viewContext, title, data, hide)
+            } else {
+                guard let item = editedItem else { return }
+                
+                item.title = title
+                item.data = data
+                item.timestamp = Date()
+                item.hide = hide
+                
+                try viewContext.save()
+            }
+            clearInput()
+            dismiss()
+            print("🟢SUCCESS: Save Data")
+        } catch {
+            print("🔴ERROR: \(String(describing: error))")
+        }
+        
     }
 }
 
