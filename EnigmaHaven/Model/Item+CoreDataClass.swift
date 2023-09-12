@@ -14,6 +14,7 @@ import CryptoKit
 public class Item: NSManagedObject {
     static func create(
         _ viewContext: NSManagedObjectContext,
+        _ key: SymmetricKey,
         _ title: String,
         _ data: String?,
         _ hide: Bool = false
@@ -25,6 +26,10 @@ public class Item: NSManagedObject {
         newItem.timestamp = Date()
         newItem.hide = hide
         
+        newItem.encrypt(key)
+        
+        
+        
         do {
             try viewContext.save()
             print("🟢SUCCESS: create Item")
@@ -34,7 +39,42 @@ public class Item: NSManagedObject {
         }
     }
     
-    static func encrypt(plaintext: String, key: SymmetricKey) throws -> (ciphertext: String, nonce: Data, tag: Data) {
+    func dataRead(_ key: SymmetricKey) -> String {
+        guard let data = self.data,
+              data != "",
+              let nonce = self.nonce,
+              let tag = self.nonce
+        else {
+            print("🔴Error Guard Data")
+            return ""
+        }
+        
+        do {
+            print("🔵Decrypting... \(String(describing: self))")
+            let result = try self.decrypt(ciphertext: data, key: key, nonce: nonce, tag: tag)
+            print("🟢Success Read Data")
+            return result
+        } catch {
+            print("🔴Error decrypt data: \(String(describing: error))")
+            return ""
+        }
+    }
+    
+    func encrypt(_ key: SymmetricKey) {
+        guard let data = self.data, data != "" else { return }
+        do {
+            let enc = try self.encrypt(plaintext: data, key: key)
+            self.data = enc.ciphertext
+            self.nonce = enc.nonce
+            self.tag = enc.tag
+            print("🟢success to ENCRYPT data: \(String(describing: self))")
+        } catch {
+            print("🔴fail to ENCRYPT data")
+        }
+        
+    }
+    
+    private func encrypt(plaintext: String, key: SymmetricKey) throws -> (ciphertext: String, nonce: Data, tag: Data) {
         let plaintextData = Data(plaintext.utf8)
         let nonce = AES.GCM.Nonce()
         let sealedBox = try AES.GCM.seal(plaintextData, using: key, nonce: nonce)
@@ -42,8 +82,7 @@ public class Item: NSManagedObject {
         return (ciphertext: Data(sealedBox.ciphertext).base64EncodedString(), nonce: Data(nonce), tag: tag)
     }
 
-    // Decryption Function
-    static func decrypt(ciphertext: String, key: SymmetricKey, nonce: Data, tag: Data) throws -> String {
+    private func decrypt(ciphertext: String, key: SymmetricKey, nonce: Data, tag: Data) throws -> String {
         guard let ciphertextData = Data(base64Encoded: ciphertext) else {
             throw ItemError.invalidInputData
         }
@@ -57,12 +96,6 @@ public class Item: NSManagedObject {
         
         return decryptedString
     }
-
-
-    
-
-
-
 }
 
 enum ItemError: Error {

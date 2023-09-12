@@ -25,33 +25,35 @@ struct ContentView: View {
         if !keyObservable.isAuthenticate {
             AuthView()
         } else {
-            List {
-                ForEach(items) { item in
-                    ItemRow(item: item, onClick: editItem)
+            NavigationView {
+                List {
+                    ForEach(items) { item in
+                        ItemRow(item: item, onClick: editItem)
+                    }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .onAppear {
-                // check anything!
-            }
-            .navigationTitle("Secret Data")
-            .listStyle(.grouped)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                .onAppear {
+                    // check anything!
                 }
-                ToolbarItem {
-                    Button(action: toggleSheetAddItem) {
-                        Label("Add Item", systemImage: "plus")
+                .navigationTitle("Secret Data")
+                .listStyle(.grouped)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: toggleSheetAddItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
                     }
                 }
-            }
-            .sheet(isPresented: $showSheetAddItem) {
-                AddItemSheet(dismiss: toggleSheetAddItem, editedItem: $editedItem)
-            }
-            .onChange(of: editedItem) { _ in
-                if editedItem != nil {
-                    toggleSheetAddItem()
+                .sheet(isPresented: $showSheetAddItem) {
+                    AddItemSheet(dismiss: toggleSheetAddItem, editedItem: $editedItem)
+                }
+                .onChange(of: editedItem) { _ in
+                    if editedItem != nil {
+                        toggleSheetAddItem()
+                    }
                 }
             }
         }
@@ -81,6 +83,7 @@ struct ContentView: View {
 }
 
 struct ItemRow: View {
+    
     var item: Item
     var onClick: (_ item: Item) -> Void
     
@@ -89,32 +92,13 @@ struct ItemRow: View {
             Button {
                 onClick(item)
             } label: {
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(item.title!)
-                            .font(.headline)
-                        Spacer()
-                        Text(item.timestamp!, formatter: itemFormatter)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                    if item.hide && item.data != "" {
-                        HStack(alignment: .bottom) {
-                            Text("*******\n*****")
-                                .multilineTextAlignment(.leading)
-                                .padding(.vertical,1)
-                            Spacer()
-                            Text("Data hidden\nbecause it's secret")
-                                .multilineTextAlignment(.trailing)
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                    } else if let data = item.data, data != "" {
-                        Text(data)
-                            .multilineTextAlignment(.leading)
-                            .padding(.vertical,1)
-                    }
+                HStack {
+                    Text(item.title!)
+                        .font(.headline)
+                    Spacer()
+                    Text(item.timestamp!, formatter: itemFormatter)
+                        .font(.caption)
+                        .foregroundColor(.gray)
                 }
                 .foregroundColor(Color(uiColor: .label))
                 .clipShape(Rectangle())
@@ -137,30 +121,9 @@ struct AddItemSheet: View {
     @State private var data: String = ""
     @State private var hide: Bool = false
     
-    @State private var cipherText = ""
-    @State private var nonce: Data? = nil
-    @State private var tag: Data? = nil
-    
     private var navTitle: String {
         editedItem == nil ? "Add Item" : "Edit Item"
     }
-    
-    private var decrypt: String {
-        do {
-            guard let key = keyObservable.key,
-                  let tag = tag
-            else { return "noKey" }
-            if let nonce = self.nonce {
-                
-                return try Item.decrypt(ciphertext: cipherText, key: key, nonce: nonce, tag: tag)
-            }else {
-                return "no Nonce"
-            }
-        } catch {
-            return "error \(String(describing: error))"
-        }
-    }
-
     
     var body: some View {
         
@@ -180,28 +143,9 @@ struct AddItemSheet: View {
                     Section("Data") {
                         TextEditor(text: $data)
                     }
-                    
-                    Section("ENCRYPT-result") {
-                        Text(cipherText)
-                    }
-                    
-                    if nonce != nil && cipherText != "" {
-                        Section("DECRYPT-test-result") {
-                            Text(decrypt)
-                        }
-                    }
                 }
                 .listStyle(.insetGrouped)
             }
-            .onChange(of: data, perform: { _ in
-                guard data != "", let key = keyObservable.key else { return }
-                do {
-                    let enc = try Item.encrypt(plaintext: data, key: key)
-                    self.cipherText =  enc.ciphertext
-                    self.nonce = enc.nonce
-                    self.tag = enc.tag
-                } catch { }
-            })
             .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.large)
             .onAppear(perform: onAppear)
@@ -237,21 +181,25 @@ struct AddItemSheet: View {
     
     private func onAppear() {
         guard let item = editedItem,
-              let title = item.title
+              let title = item.title,
+              let key = keyObservable.key
         else { return }
         print("🔵item found: \(title)")
         
+        guard let nonce = item.nonce, let tag = item.tag else { return }
+        keyObservable.verify(nonce: nonce, tag: tag)
+        
         self.title = title
-        self.data = item.data ?? ""
+        self.data = item.dataRead(key)
         self.hide = item.hide
     }
     
     private func saveItem() {
-        guard title != "" else { return }
+        guard title != "", let key = keyObservable.key else { return }
         
         do {
             if editedItem == nil {
-                try Item.create(viewContext, title, data, hide)
+                try Item.create(viewContext, key, title, data, hide)
             } else {
                 guard let item = editedItem else { return }
                 
@@ -259,6 +207,11 @@ struct AddItemSheet: View {
                 item.data = data
                 item.timestamp = Date()
                 item.hide = hide
+                
+                item.encrypt(key)
+                
+                keyObservable.nonce = item.nonce
+                keyObservable.tag = item.tag
                 
                 try viewContext.save()
             }

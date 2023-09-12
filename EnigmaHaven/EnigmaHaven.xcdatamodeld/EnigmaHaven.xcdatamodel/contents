@@ -3,6 +3,8 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="category">
         <attribute name="data" optional="YES" attributeType="String"/>
         <attribute name="hide" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="nonce" optional="YES" attributeType="Binary"/>
+        <attribute name="tag" optional="YES" attributeType="Binary"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String"/>
     </entity>
